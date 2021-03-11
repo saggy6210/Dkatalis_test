@@ -37,9 +37,9 @@ Answer: The Elasticsearch security features enable you to secure a cluster/host.
 
 Following stpes has been followed to enable security on elasticsearch after provisioning elasticsearch host and remote execution of ES installation. 
 
-sh```
+```sh
 
-/usr/share/elasticsearch/bin/elasticsearch-certutil  ca
+$/usr/share/elasticsearch/bin/elasticsearch-certutil  ca
 This tool assists you in the generation of X.509 certificates and certificate
 signing requests for use with SSL/TLS in the Elastic stack.
 
@@ -313,9 +313,13 @@ chmod 660 /etc/elasticsearch/http.p12
 ```sh
 /usr/share/elasticsearch/bin/elasticsearch-setup-passwords auto -u https://13.233.103.81:9200
 ```
-![Screenshot](Screenshot from 2021-03-11 00-18-54.png)
 
-![Screenshot](Screenshot from 2021-03-11 00-19-26.png)
+> Screenshots: 
+
+https://github.com/saggy6210/Dkatalis_test/blob/main/Screenshot%20from%202021-03-11%2000-19-26.png
+
+https://github.com/saggy6210/Dkatalis_test/blob/main/Screenshot%20from%202021-03-11%2000-18-54.png
+
 
 3. How would you monitor this instance? What metrics would you monitor?
 
