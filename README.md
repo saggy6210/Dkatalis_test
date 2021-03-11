@@ -1,15 +1,15 @@
-## Dkatalis_test
+### Dkatalis_test
 
 You can choose to use any scripting language to automate (great if you could do in Ansible/
 Terraform). Use the free-tier resources from AWS. Feel free to comment your code and/or put
 detailed information in the instructions. The exercise will be 2.5 hours.
 
-### Following is the goals of the exercise:
+#### Following is the goals of the exercise:
 1. Demonstrate your hands-on skills, you can code for building cloud hosted solution
 2. Demonstrate that you can think of other cross-cutting-concerns like security
 3. A nice segue to our discussion after you submit the code
 
-### What we are expecting:
+#### What we are expecting:
 1. A link to github repo (or a zip/tarball) with code that accomplishes:
 a) Brings up an AWS instance
 b) Installs ElasticSearch configured in a way that requires credentials and provides encrypted
@@ -23,7 +23,8 @@ c) How long did you spend on the exercise, and if possible, short feedback about
 in the instructions
 4. ElasticSearch access and communication must be secure
 
-### Bonus if you extend your code to create a cluster of 3 ElasticSearch nodes
+#### Bonus if you extend your code to create a cluster of 3 ElasticSearch nodes
+
 Some answers we are looking:
 Following are the required details:
 1. What did you choose to automate the provisioning and bootstrapping of the instance? Why?
@@ -31,9 +32,12 @@ Following are the required details:
 Answer: I choose Terraform for provisioning and bootstrapping of instance because Terraform is IaC, Code reuse, it's plays important role in versioning, its maintain the state of infrastructure so that we can provision the infrastucture in incrementally. It will enable you to rebuild/change and track changes to infrastructure with ease.
 
 2. How did you choose to secure ElasticSearch? Why?
-The Elasticsearch security features enable you to secure a cluster/host. You can password-protect your data as well as implement more advanced security measures such as encrypting communications, role-based access control, IP filtering, and auditing. For security concern I choose to secure elasticsearch. 
+
+Answer: The Elasticsearch security features enable you to secure a cluster/host. You can password-protect your data as well as implement more advanced security measures such as encrypting communications, role-based access control, IP filtering, and auditing. For security concern I choose to secure elasticsearch. 
 
 Following stpes has been followed to enable security on elasticsearch after provisioning elasticsearch host and remote execution of ES installation. 
+
+sh```
 $/usr/share/elasticsearch/bin/elasticsearch-certutil  ca
 This tool assists you in the generation of X.509 certificates and certificate
 signing requests for use with SSL/TLS in the Elastic stack.
@@ -240,7 +244,7 @@ When you are done, press <ENTER> once more to move on to the next step.
 You entered the following hostnames.
 
  - 13.233.103.81
-
+```
 Is this correct [Y/n]Y
 
 ## Which IP addresses will be used to connect to your nodes?
@@ -302,13 +306,19 @@ cp  /usr/share/elasticsearch/elasticsearch/http.p12 /etc/elasticsearch/
 chown root.elasticsearch /etc/elasticsearch/http.p12
 chmod 660 /etc/elasticsearch/http.p12
 ```
-- Password for elasticsearch:
+
+- Generate Password for elasticsearch:
 
 ```sh
 /usr/share/elasticsearch/bin/elasticsearch-setup-passwords auto -u https://13.233.103.81:9200
 ```
+![Screenshot](Screenshot from 2021-03-11 00-18-54.png)
+
+![Screenshot](Screenshot from 2021-03-11 00-19-26.png)
 
 3. How would you monitor this instance? What metrics would you monitor?
+
+Answer: 
 Using Kibana or Grafana, we can monitor this instance by configuring following metrics:
 Instance Health – Nodes and Shards
 Search Performance – Request Rate
@@ -319,19 +329,26 @@ Instance Health – CPU
 Other data based metrics - Oprational
 
 4. Could you extend your solution to launch a secure cluster of ElasticSearch nodes? What would need to change to support this use case?
+
+Answer: 
 Yes, I can extend to launch a secure cluster of ElasticSearch nodes. Only has to create (N) number of instances and cluster configuration in /etc/elasticsearch/elasticsearch.yml
 
 5. Could you extend your solution to replace a running ElasticSearch instance with little or no downtime? How?
-Yes,
+
+Answer: Yes,
 Run the migration plugin on your production cluster to find data incompatibility early in the migration process.
 Test migration in a dev environment before migration your production cluster.
 Always take a snapshot(backup of your data before migration.
 Automate the ElasticSearch cluster provisioning using terraform or any other tool.
 
 6. Was it a priority to make your code well structured, extensible, and reusable?
+
+Answer: 
 Yes, that's why I have used Terraform for infrastructure provisioing, and well structured code, extensible and resusable are the features of the terraform. 
 
 7. What sacrifices did you make due to time?
-Sacrifies always based on the opportunity cost, I spend some more time on this assignment along with my daily schedule but it was a great learning for me. 
+
+Answer: 
+Sacrifies always based on the opportunity cost, I spend have spent almost 3 hrs time on this assignment,it was a great learning for me. 
 
 Please share the feedback!
