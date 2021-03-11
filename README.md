@@ -38,7 +38,8 @@ Answer: The Elasticsearch security features enable you to secure a cluster/host.
 Following stpes has been followed to enable security on elasticsearch after provisioning elasticsearch host and remote execution of ES installation. 
 
 sh```
-$/usr/share/elasticsearch/bin/elasticsearch-certutil  ca
+
+/usr/share/elasticsearch/bin/elasticsearch-certutil  ca
 This tool assists you in the generation of X.509 certificates and certificate
 signing requests for use with SSL/TLS in the Elastic stack.
 
@@ -244,7 +245,7 @@ When you are done, press <ENTER> once more to move on to the next step.
 You entered the following hostnames.
 
  - 13.233.103.81
-```
+
 Is this correct [Y/n]Y
 
 ## Which IP addresses will be used to connect to your nodes?
