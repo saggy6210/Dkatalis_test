@@ -325,18 +325,18 @@ https://github.com/saggy6210/Dkatalis_test/blob/main/Screenshot%20from%202021-03
 
 Answer: 
 Using Kibana or Grafana, we can monitor this instance by configuring following metrics:
-Instance Health – Nodes and Shards
-Search Performance – Request Rate
-Indexing Performance – Refresh Times
-Instance Health – Memory Usage
-Instance Health – Disk I/O
-Instance Health – CPU
+Instance Health – Nodes and Shards,
+Search Performance – Request Rate,
+Indexing Performance – Refresh Times,
+Instance Health – Memory Usage,
+Instance Health – Disk I/O,
+Instance Health – CPU,
 Other data based metrics - Oprational
 
 4. Could you extend your solution to launch a secure cluster of ElasticSearch nodes? What would need to change to support this use case?
 
 Answer: 
-Yes, I can extend to launch a secure cluster of ElasticSearch nodes. Only has to create (N) number of instances and cluster configuration in /etc/elasticsearch/elasticsearch.yml
+Yes, I can extend to launch a secure cluster of ElasticSearch nodes by provisioning more (N) number of instances and cluster configuration in /etc/elasticsearch/elasticsearch.yml. I will have to update terraform script to create N instances and install ES script on all provisioned instances. Once installation will finish have to do configuration and create certificates for all host and deploy into /etc/elasticsearch/ and restart the cluster.
 
 5. Could you extend your solution to replace a running ElasticSearch instance with little or no downtime? How?
 
@@ -354,6 +354,6 @@ Yes, that's why I have used Terraform for infrastructure provisioing, and well s
 7. What sacrifices did you make due to time?
 
 Answer: 
-Sacrifies always based on the opportunity cost, I spend have spent almost 3 hrs time on this assignment,it was a great learning for me. 
+Sacrifies always based on the opportunity cost, I have spent almost 3 hrs time on this assignment,it was a great learning for me. 
 
 Please share the feedback!
